@@ -1,0 +1,3 @@
+recursive-include pisnrs *.pkl
+include LICENSE
+include README.md
