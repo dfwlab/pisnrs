@@ -102,3 +102,4 @@ If you already have a working installation of rdkit and scikit-learn, the easies
 You can check the latest sources with the command:
 
     git clone https://github.com/ddhmed/pisnrs.git
+
