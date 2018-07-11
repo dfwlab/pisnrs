@@ -66,7 +66,7 @@ If you already have a working installation of rdkit and scikit-learn, the easies
     print(model.getLigandDescriptors()) # print Ligand descriptors in model
 ~~~~~~~~~~~~~~~
 
-### 2. predict the activity and scaffold of one ligand smiles
+### 2. predict the activity and scaffold of one ligand
 
 ~~~~~~~~~~~~~~~
     ### moltype includes : smiles, mol, block, sdf
