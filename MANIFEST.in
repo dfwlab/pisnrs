@@ -1,3 +1,4 @@
 recursive-include pisnrs *.pkl
+recursive-include example *.*
 include LICENSE
 include README.md
