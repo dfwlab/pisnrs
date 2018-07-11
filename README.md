@@ -187,7 +187,7 @@ M  END
 
 ~~~~~~~~~~~~~~~
     smile = 'CC1OC(C2=CC=CC=C2)=NC=1CN(CC1=CC(=C(C(=C1)C)OC(C(O)=O)(C)C)C)CC1OC=CC=1'
-    model.image_from_smile(smile, name='example.png', dir='example/') # output image of smiles to 'temp/' folder
+    model.image_from_smile(smile, name='example.png', dir='example/') # output image of smiles to 'examole/' folder
 ~~~~~~~~~~~~~~~
 
 
