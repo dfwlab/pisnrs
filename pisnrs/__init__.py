@@ -108,19 +108,25 @@ class pisnrs:
     ### Predict activities
     def preLabel(self, des):
         ### predict the class of ligand activity [1 : Positive, 0 : Negtive]
-        value = self.sklmodel.predict([des])
-        return value[0]
+        try:
+            value = self.sklmodel.predict([des])
+            return value[0]
+        except:
+            return False
     
     def preProba(self, des):
         ### predict the probability of ligand activity [Negtive probability, Postive probability]
-        value = self.sklmodel.predict_proba([des])
-        return (value[0][0], value[0][1])
+        try:
+            value = self.sklmodel.predict_proba([des])
+            return (value[0][0], value[0][1])
+        except:
+            return False
     
     def calScaffoldFromSmile(self, smile):
         ### calculate scaffold of ligand
         return MurckoScaffold.MurckoScaffoldSmilesFromSmiles(smile)
 
-    def image_from_smile(smile, name, dir='temp/'):
+    def image_from_smile(self, smile, name, dir='temp/'):
         ### create molecule structure image
         path = dir+name
         try:
@@ -175,3 +181,21 @@ if __name__ == '__main__':
     
     print(model.getLigandDescriptors())
     print(model.getNRs())
+    
+    #model.image_from_smile('CCCC', 'test.png', dir='Temp/')
+    
+    smiles = 'CC1OC(C2=CC=CC=C2)=NC=1CN(CC1=CC(=C(C(=C1)C)OC(C(O)=O)(C)C)C)CC1OC=CC=1'
+    protein = 'NR1C1'
+    des = model.calPCMDecriptorFromMolText(smiles, protein, moltype='smiles') # create descriptors
+    print(model.preProba(des)) # predict
+    
+    
+    molfile = '../example/example.mol'
+    protein = 'NR1C1'
+    des = model.calPCMDecriptorFromMolText(molfile, protein, moltype='mol')
+    print(model.preProba(des))
+    
+    molfile = '../example/example.sdf'
+    protein = 'NR1C1'
+    des = model.calPCMDecriptorFromMolText(molfile, protein, moltype='sdf')
+    print(model.preProba(des))
