@@ -1,7 +1,8 @@
-# pisnrs
+# PisNRs
 
-pisnrs is a Python module for NR inhibitors prediction built on top of
-RDKit, scikit-learn and distributed under the MIT license.
+PisNRs is a Python module for potential inhibitor and scaffold prediction 
+of nuclear receptors built on top of RDKit, scikit-learn and distributed 
+under the MIT license.
 
 
 ## Installation
