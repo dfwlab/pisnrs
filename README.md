@@ -53,7 +53,7 @@ or ``conda`` :
 If you already have a working installation of rdkit and scikit-learn, the easiest way to install pisnrs is using ``pip`` :
 
 ~~~~~~~~~~~~~~~
-    pip install pisnrs
+    pip install --upgrade pisnrs
 ~~~~~~~~~~~~~~~
 
 ## Example
@@ -71,6 +71,8 @@ If you already have a working installation of rdkit and scikit-learn, the easies
 
 ~~~~~~~~~~~~~~~
     ### moltype includes : smiles, mol, block, sdf
+    ### You can find the example .mol and .sdf file in the 'example/' folder
+    ### Example: https://github.com/ddhmed/pisnrs/tree/master/example
     # 1. smiles input
     smiles = 'CC1OC(C2=CC=CC=C2)=NC=1CN(CC1=CC(=C(C(=C1)C)OC(C(O)=O)(C)C)C)CC1OC=CC=1'
     protein = 'NR1C1'
@@ -175,20 +177,28 @@ M  END
     print(model.preProba(des))
 ~~~~~~~~~~~~~~~
 
-### 3. Batch mode
+### 3. Calculate scaffold of ligands
 
 ~~~~~~~~~~~~~~~
-    smiles_list = ['CCCC', 'CCC']
+    smiles = 'CC1OC(C2=CC=CC=C2)=NC=1CN(CC1=CC(=C(C(=C1)C)OC(C(O)=O)(C)C)C)CC1OC=CC=1'
+    scaffold = model.calScaffoldFromSmiles(smiles)
+    print(scaffold)
+~~~~~~~~~~~~~~~
+
+### 4. Batch mode
+
+~~~~~~~~~~~~~~~
+    smiles_list = ['CC1OC(C2=CC=CC=C2)=NC=1CN(CC1=CC(=C(C(=C1)C)OC(C(O)=O)(C)C)C)CC1OC=CC=1', 'C1=CC=CC=C1']
     protein_list = ['NR1C1', 'NR1C2']
-    print(model.preBatch(smiles_list, protein_list=protein_list) # predict activity of every ligands and proteins in list 
-    print(model.preBatch(smiles_list) # predict activity of every ligands in list and all proteins in model
+    print(model.preBatch(smiles_list, protein_list=protein_list)） # predict activity of every ligands and proteins in list 
+    print(model.preBatch(smiles_list)） # predict activity of every ligands in list and all proteins in model
 ~~~~~~~~~~~~~~~
 
-### 4. Create molecule images
+### 5. Create molecule images
 
 ~~~~~~~~~~~~~~~
-    smile = 'CC1OC(C2=CC=CC=C2)=NC=1CN(CC1=CC(=C(C(=C1)C)OC(C(O)=O)(C)C)C)CC1OC=CC=1'
-    model.image_from_smile(smile, name='example.png', dir='example/') # output image of smiles to 'examole/' folder
+    smiles = 'CC1OC(C2=CC=CC=C2)=NC=1CN(CC1=CC(=C(C(=C1)C)OC(C(O)=O)(C)C)C)CC1OC=CC=1'
+    model.image_from_smiles(smiles, name='example.png', dir='example/') # output image of smiles to 'example/' folder
 ~~~~~~~~~~~~~~~
 
 
