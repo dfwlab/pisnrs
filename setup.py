@@ -5,10 +5,10 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pisnrs",
-    version="0.0.2",
+    version="0.0.5",
     author="Dingfeng Wu",
     author_email="dfw_bioinfo@126.com",
-    description="A package for predict scaffold of NR inhibitors",
+    description="A computational server for potential inhibitor and scaffold prediction of nuclear receptors",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/pypa/pisnrs",
