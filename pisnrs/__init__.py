@@ -17,11 +17,14 @@ from rdkit.Chem.Scaffolds import MurckoScaffold
 
 class pisnrs:
     def __init__(self):
-        self.BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__))).replace('\\', '/')+'/pisnrs/'
-        self.model_path = 'Model_seq_cut1_RFC.pkl'
-        self.pdes_path = 'seq.pkl'
-        self.loadNRModel(self.BASE_DIR+self.model_path)
-        self.loadProteinDescriptor(self.BASE_DIR+self.pdes_path)
+        try:
+            self.BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__))).replace('\\', '/')+'/pisnrs/'
+            self.model_path = 'Model_seq_cut1_RFC.pkl'
+            self.pdes_path = 'seq.pkl'
+            self.loadNRModel(self.BASE_DIR+self.model_path)
+            self.loadProteinDescriptor(self.BASE_DIR+self.pdes_path)
+        except:
+            raise Exception('Import PisNRs module ERROR! Please reinstall PisNRs according to the help documentation!')
     
     ### Load Model and descriptors
     def loadNRModel(self, path):
@@ -59,14 +62,18 @@ class pisnrs:
     
     def calPCMDescriptors(self, mol, protein):
         ### calculate protein and ligand descriptors
-        ligand_des = self.calLigandDescriptors(mol)
-        des = []
-        for f in self.features:
-            if 'NR'!=f[:2]:
-                des.append(ligand_des[f])
-            else:
-                des.append(self.seq_descriptor[protein][f])
-        return des
+        try:
+            ligand_des = self.calLigandDescriptors(mol)
+            des = []
+            for f in self.features:
+                if 'NR'!=f[:2]:
+                    des.append(ligand_des[f])
+                else:
+                    des.append(self.seq_descriptor[protein][f])
+            return des
+        except:
+            raise Exception('Calculating Descriptors ERROR! Please check your paramaters!')
+            return False
     
     def getMolFromSmiles(self, smile):
         return Chem.MolFromSmiles(smile)
@@ -94,6 +101,7 @@ class pisnrs:
             if moltype == 'sdf':
                 return Chem.SDMolSupplier(text)[0]
         except:
+            raise Exception('Reading molecule ERROR! Please check your path and input file!')
             return False
         return False
     
@@ -122,18 +130,19 @@ class pisnrs:
         except:
             return False
     
-    def calScaffoldFromSmile(self, smile):
+    def calScaffoldFromSmiles(self, smile):
         ### calculate scaffold of ligand
         return MurckoScaffold.MurckoScaffoldSmilesFromSmiles(smile)
 
-    def image_from_smile(self, smile, name, dir='temp/'):
+    def image_from_smiles(self, smiles, name, dir='temp/'):
         ### create molecule structure image
         path = dir+name
         try:
-            mol = Chem.MolFromSmiles(smile)
+            mol = Chem.MolFromSmiles(smiles)
             AllChem.Compute2DCoords(mol)
             Draw.MolToFile(mol, path)
         except:
+            raise Exception('Saving image ERROR! Please check your smiles, name and path!')
             return False
         return True
     
@@ -146,7 +155,7 @@ class pisnrs:
         for smiles in smiles_list:
             result_row = [index, smiles]
             try:
-                scaffold = self.calScaffoldFromSmile(smiles)
+                scaffold = self.calScaffoldFromSmiles(smiles)
                 result_row.append(scaffold)
             except:
                 result_row.append('')
@@ -199,3 +208,5 @@ if __name__ == '__main__':
     protein = 'NR1C1'
     des = model.calPCMDecriptorFromMolText(molfile, protein, moltype='sdf')
     print(model.preProba(des))
+
+    model.image_from_smiles(smiles, 'example.png', dir='../example/')
