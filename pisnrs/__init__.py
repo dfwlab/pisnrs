@@ -210,3 +210,8 @@ if __name__ == '__main__':
     print(model.preProba(des))
 
     model.image_from_smiles(smiles, 'example.png', dir='../example/')
+
+    
+    smiles_list = ['CC1OC(C2=CC=CC=C2)=NC=1CN(CC1=CC(=C(C(=C1)C)OC(C(O)=O)(C)C)C)CC1OC=CC=1', 'C1=CC=CC=C1']
+    protein_list = ['NR1C1', 'NR1C2']
+    print(model.preBatch(smiles_list, protein_list))
