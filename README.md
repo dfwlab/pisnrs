@@ -19,7 +19,7 @@ Ancaconda is recommended for package management and environment configures.
 ### 1. Anaconda introduction
 
 The user can download and install Anaconda at [Anaconda Python distribution](https://conda.io/docs/user-guide/install/index.html).
-Also, Miniconda is acceptable in here. The conda source code repository is avaliable at
+Also, Miniconda is acceptable in [here](https://conda.io/miniconda.html). The conda source code repository is avaliable at
  [github](https://github.com/conda) and project [website](https://conda.io/docs/).
 
 ### 2. Install RDKit with Anaconda
