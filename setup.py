@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="pisnrs",
-    version="0.0.5",
+    version="0.0.6",
     author="Dingfeng Wu",
     author_email="dfw_bioinfo@126.com",
     description="A computational server for potential inhibitor and scaffold prediction of nuclear receptors",
