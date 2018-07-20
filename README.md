@@ -1,42 +1,38 @@
 # PisNRs
 
 PisNRs is a Python module for potential inhibitor and scaffold prediction 
-of nuclear receptors built on top of RDKit, scikit-learn and distributed 
+of nuclear receptors, which constructed on top of RDKit, scikit-learn 
 under the MIT license.
 
 
 ## Installation
 
-### Dependencies
+Currently, PisNRs requires the following dependencies:
 
-pisnrs requires:
-
-- Python (>= 2.6)
+- Python (>= 3.6)
 - rdkit (>= 2018.03.2.0)
 - scikit-learn (>= 0.19.1)
 - pandas (>= 0.23.1)
 
-You can configure the environment of the pisnrs through Ancaconda.
+Ancaconda is recommended for package management and environment configures.
 
-### 1. Introduction to anaconda
+### 1. Anaconda introduction
 
-Conda is an open-source, cross-platform, software package manager. It supports the packaging and distribution of software components, and manages their installation inside isolated execution environments. It has several analogies with pip and virtualenv, but it is designed to be more "python-agnostic" and more suitable for the distribution of binary packages and their dependencies.
+The user can download and install Anaconda at [Anaconda Python distribution](https://conda.io/docs/user-guide/install/index.html).
+Also, Miniconda is acceptable in here. The conda source code repository is avaliable at
+ [github](https://github.com/conda) and project [website](https://conda.io/docs/).
 
-### 2. How to get conda
+### 2. Install RDKit with Anaconda
 
-The easiest way to get Conda is having it installed as part of the [Anaconda Python distribution](https://conda.io/docs/user-guide/install/index.html). A possible (but a bit more complex to use) alternative is provided with the smaller and more self-contained [Miniconda](https://conda.io/miniconda.html). The conda source code repository is available on [github](https://github.com/conda) and additional documentation is provided by the project [website](https://conda.io/docs/).
-
-### 3. How to install RDKit with Conda
-
-Creating a new conda environment with the RDKit installed requires one single command similar to the following:
+Creating a new conda environment with the RDKit installation with the following command:
 
 ~~~~~~~~~~~~~~~
   $ conda create -c rdkit rdkit
 ~~~~~~~~~~~~~~~
 
-### 4. Install scikit-learn
+### 3. Install scikit-learn
 
-Install scikit-learn using ``pip`` :
+User can install scikit-learn by using ``pip`` :
 
 ~~~~~~~~~~~~~~~
     pip install -U scikit-learn
@@ -48,9 +44,9 @@ or ``conda`` :
     conda install scikit-learn
 ~~~~~~~~~~~~~~~
 
-### 5. Install pisnrs
+### 4. Install PisNRs
 
-If you already have a working installation of rdkit and scikit-learn, the easiest way to install pisnrs is using ``pip`` :
+After installation of RDKit and scikit-learn, PisNRs can be installed by using ``pip`` :
 
 ~~~~~~~~~~~~~~~
     pip install --upgrade pisnrs
@@ -58,7 +54,7 @@ If you already have a working installation of rdkit and scikit-learn, the easies
 
 ## Example
 
-### 1. import pisnrs and load model
+### 1. import PisNRs and load model
 
 ~~~~~~~~~~~~~~~
     import pisnrs
@@ -67,7 +63,7 @@ If you already have a working installation of rdkit and scikit-learn, the easies
     print(model.getLigandDescriptors()) # print Ligand descriptors in model
 ~~~~~~~~~~~~~~~
 
-### 2. predict the activity and scaffold of one ligand
+### 2. Predict the activity and scaffold of query ligand
 
 ~~~~~~~~~~~~~~~
     ### moltype includes : smiles, mol, block, sdf
@@ -80,7 +76,7 @@ If you already have a working installation of rdkit and scikit-learn, the easies
     print(model.preProba(des)) # predict
     
     # 2. .mol file input
-    molfile = 'example/example.mol'
+    molfile = 'example/2.2_MolFile.mol'
     protein = 'NR1C1'
     des = model.calPCMDecriptorFromMolText(molfile, protein, moltype='mol')
     print(model.preProba(des))
@@ -171,13 +167,13 @@ M  END
     print(model.preProba(des))
     
     # 4. .sdf file input
-    sdffile = 'example/example.sdf'
+    sdffile = 'example/2.4_SDFFile.sdf'
     protein = 'NR1C1'
     des = model.calPCMDecriptorFromMolText(sdffile, protein, moltype='sdf')
     print(model.preProba(des))
 ~~~~~~~~~~~~~~~
 
-### 3. Calculate scaffold of ligands
+### 3. Derive molecule scaffold of query ligand
 
 ~~~~~~~~~~~~~~~
     smiles = 'CC1OC(C2=CC=CC=C2)=NC=1CN(CC1=CC(=C(C(=C1)C)OC(C(O)=O)(C)C)C)CC1OC=CC=1'
@@ -185,24 +181,27 @@ M  END
     print(scaffold)
 ~~~~~~~~~~~~~~~
 
-### 4. Batch mode
+### 4. Create molucule image of query ligand
+
+~~~~~~~~~~~~~~~
+    smiles = 'CC1OC(C2=CC=CC=C2)=NC=1CN(CC1=CC(=C(C(=C1)C)OC(C(O)=O)(C)C)C)CC1OC=CC=1'
+    model.image_from_smiles(smiles, name='4_OutputImage.png', dir='example/') # output image of smiles to 'example/' folder
+~~~~~~~~~~~~~~~
+
+### 5. Batch mode uploading
 
 ~~~~~~~~~~~~~~~
     smiles_list = ['CC1OC(C2=CC=CC=C2)=NC=1CN(CC1=CC(=C(C(=C1)C)OC(C(O)=O)(C)C)C)CC1OC=CC=1', 'C1=CC=CC=C1']
     protein_list = ['NR1C1', 'NR1C2']
-    print(model.preBatch(smiles_list, protein_list=protein_list)） # predict activity of every ligands and proteins in list 
-    print(model.preBatch(smiles_list)） # predict activity of every ligands in list and all proteins in model
+    print(model.preBatch(smiles_list, protein_list)) # predict activity of every ligands and proteins in list 
+    print(model.preBatch(smiles_list)) # predict activity of every ligands in list and all proteins in model
+    ### load smiles list from file
+    smiles_file = 'example/5_SmilesList.smiles'
+    smiles_list = [i.strip() for i in open(smiles_file, 'r').readlines()]
+    print(model.preBatch(smiles_list))
 ~~~~~~~~~~~~~~~
 
-### 5. Create molecule images
-
-~~~~~~~~~~~~~~~
-    smiles = 'CC1OC(C2=CC=CC=C2)=NC=1CN(CC1=CC(=C(C(=C1)C)OC(C(O)=O)(C)C)C)CC1OC=CC=1'
-    model.image_from_smiles(smiles, name='example.png', dir='example/') # output image of smiles to 'example/' folder
-~~~~~~~~~~~~~~~
-
-
-## Important links
+## Related links
 
 - Official source code repo: https://github.com/ddhmed/pisnrs
 - Download releases: https://pypi.org/project/pisnrs/
@@ -210,6 +209,6 @@ M  END
 
 ## Source code
 
-You can check the latest sources with the command:
+The latest sources can be checked by using the following command:
 
     git clone https://github.com/ddhmed/pisnrs.git
