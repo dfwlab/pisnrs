@@ -1,0 +1,81 @@
+PMID- 26637529
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20160801
+LR  - 20181113
+IS  - 1758-0463 (Electronic)
+IS  - 1758-0463 (Linking)
+VI  - 2015
+DP  - 2015
+TI  - ONRLDB--manually curated database of experimentally validated ligands for orphan 
+      nuclear receptors: insights into new drug discovery.
+LID - bav112 [pii]
+LID - 10.1093/database/bav112 [doi]
+AB  - Orphan nuclear receptors are potential therapeutic targets. The Orphan Nuclear 
+      Receptor Ligand Binding Database (ONRLDB) is an interactive, comprehensive and 
+      manually curated database of small molecule ligands targeting orphan nuclear 
+      receptors. Currently, ONRLDB consists of ∼11,000 ligands, of which ∼6500 are unique. 
+      All entries include information for the ligand, such as EC50 and IC50, number of 
+      aromatic rings and rotatable bonds, XlogP, hydrogen donor and acceptor count, 
+      molecular weight (MW) and structure. ONRLDB is a cross-platform database, where 
+      either the cognate small molecule modulators of a receptor or the cognate receptors 
+      to a ligand can be searched. The database can be searched using three methods: text 
+      search, advanced search or similarity search. Substructure search, cataloguing 
+      tools, and clustering tools can be used to perform advanced analysis of the ligand 
+      based on chemical similarity fingerprints, hierarchical clustering, binning 
+      partition and multidimensional scaling. These tools, together with the Tree function 
+      provided, deliver an interactive platform and a comprehensive resource for 
+      identification of common and unique scaffolds. As demonstrated, ONRLDB is designed 
+      to allow selection of ligands based on various properties and for designing novel 
+      ligands or to improve the existing ones. Database URL: http://www.onrldb.org/.
+CI  - © The Author(s) 2015. Published by Oxford University Press.
+FAU - Nanduri, Ravikanth
+AU  - Nanduri R
+FAU - Bhutani, Isha
+AU  - Bhutani I
+FAU - Somavarapu, Arun Kumar
+AU  - Somavarapu AK
+FAU - Mahajan, Sahil
+AU  - Mahajan S
+FAU - Parkesh, Raman
+AU  - Parkesh R
+FAU - Gupta, Pawan
+AU  - Gupta P
+LA  - eng
+PT  - Journal Article
+PT  - Research Support, Non-U.S. Gov't
+DEP - 20151204
+TA  - Database (Oxford)
+JT  - Database : the journal of biological databases and curation
+JID - 101517697
+RN  - 0 (Ligands)
+RN  - 0 (Liver X Receptors)
+RN  - 0 (Orphan Nuclear Receptors)
+RN  - 0 (PPAR gamma)
+RN  - 0 (Xenobiotics)
+SB  - IM
+MH  - Cluster Analysis
+MH  - Data Mining
+MH  - *Databases, Protein
+MH  - *Drug Discovery
+MH  - Inflammation/metabolism
+MH  - Information Storage and Retrieval
+MH  - Internet
+MH  - Ligands
+MH  - Liver X Receptors
+MH  - Orphan Nuclear Receptors/*metabolism
+MH  - PPAR gamma/metabolism
+MH  - Xenobiotics/chemistry/metabolism
+PMC - PMC4669993
+EDAT- 2015/12/08 06:00
+MHDA- 2016/08/02 06:00
+CRDT- 2015/12/06 06:00
+PHST- 2015/05/11 00:00 [received]
+PHST- 2015/10/30 00:00 [accepted]
+PHST- 2015/12/06 06:00 [entrez]
+PHST- 2015/12/08 06:00 [pubmed]
+PHST- 2016/08/02 06:00 [medline]
+AID - bav112 [pii]
+AID - 10.1093/database/bav112 [doi]
+PST - epublish
+SO  - Database (Oxford). 2015 Dec 4;2015:bav112. doi: 10.1093/database/bav112. Print 2015.

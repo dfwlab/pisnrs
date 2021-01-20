@@ -10,7 +10,7 @@ Currently, commandline.py requires the following dependencies:
 - Python (>= 3.6)
 - PisNRs (>= 2018.03.2.0)
 
-After the installation of pisnrs, just download commandline.py and put it into a specific directory.
+After the installation of pisnrs, just download [commandline.py](https://raw.githubusercontent.com/ddhmed/pisnrs/master/commandline/commandline.py) and put it into a specific directory.
 
 ## Options of commandline
 
@@ -42,7 +42,7 @@ For SMILES, the names of molecules are smiles.
 For sdf or mol, the names are filenames.
 Other columns represents the positive possiblities to target at the corresponding proteins.
 
-## example 
+## Example 
 ~~~~~~~~~~~~~~~
     python pipeline.py --mols-type smiles --mols-input molecule.txt --protein-input protein.txt --output-filename output.txt
 ~~~~~~~~~~~~~~~

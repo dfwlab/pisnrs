@@ -1,0 +1,67 @@
+PMID- 21253603
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20110802
+LR  - 20181113
+IS  - 1932-6203 (Electronic)
+IS  - 1932-6203 (Linking)
+VI  - 6
+IP  - 1
+DP  - 2011 Jan 6
+TI  - TCM Database@Taiwan: the world's largest traditional Chinese medicine database for 
+      drug screening in silico.
+PG  - e15939
+LID - 10.1371/journal.pone.0015939 [doi]
+LID - e15939
+AB  - Rapid advancing computational technologies have greatly speeded up the development 
+      of computer-aided drug design (CADD). Recently, pharmaceutical companies have 
+      increasingly shifted their attentions toward traditional Chinese medicine (TCM) for 
+      novel lead compounds. Despite the growing number of studies on TCM, there is no free 
+      3D small molecular structure database of TCM available for virtual screening or 
+      molecular simulation. To address this shortcoming, we have constructed TCM 
+      Database@Taiwan (http://tcm.cmu.edu.tw/) based on information collected from Chinese 
+      medical texts and scientific publications. TCM Database@Taiwan is currently the 
+      world's largest non-commercial TCM database. This web-based database contains more 
+      than 20,000 pure compounds isolated from 453 TCM ingredients. Both cdx (2D) and 
+      Tripos mol2 (3D) formats of each pure compound in the database are available for 
+      download and virtual screening. The TCM database includes both simple and advanced 
+      web-based query options that can specify search clauses, such as molecular 
+      properties, substructures, TCM ingredients, and TCM classification, based on 
+      intended drug actions. The TCM database can be easily accessed by all researchers 
+      conducting CADD. Over the last eight years, numerous volunteers have devoted their 
+      time to analyze TCM ingredients from Chinese medical texts as well as to construct 
+      structure files for each isolated compound. We believe that TCM Database@Taiwan will 
+      be a milestone on the path towards modernizing traditional Chinese medicine.
+FAU - Chen, Calvin Yu-Chian
+AU  - Chen CY
+AD  - School of Chinese Medicine, China Medical University, Taichung, Taiwan. 
+      ycc@mail.cmu.edu.tw
+LA  - eng
+PT  - Journal Article
+PT  - Research Support, Non-U.S. Gov't
+DEP - 20110106
+TA  - PLoS One
+JT  - PloS one
+JID - 101285081
+SB  - IM
+MH  - Computational Biology
+MH  - Computer Simulation
+MH  - *Databases, Factual
+MH  - *Drug Evaluation, Preclinical
+MH  - Internet
+MH  - *Medicine, Chinese Traditional
+MH  - Taiwan
+PMC - PMC3017089
+COIS- Competing Interests: The author has declared that no competing interests exist.
+EDAT- 2011/01/22 06:00
+MHDA- 2011/08/04 06:00
+CRDT- 2011/01/22 06:00
+PHST- 2010/10/25 00:00 [received]
+PHST- 2010/11/30 00:00 [accepted]
+PHST- 2011/01/22 06:00 [entrez]
+PHST- 2011/01/22 06:00 [pubmed]
+PHST- 2011/08/04 06:00 [medline]
+AID - PONE-D-10-03893 [pii]
+AID - 10.1371/journal.pone.0015939 [doi]
+PST - epublish
+SO  - PLoS One. 2011 Jan 6;6(1):e15939. doi: 10.1371/journal.pone.0015939.
