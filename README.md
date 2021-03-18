@@ -205,7 +205,7 @@ M  END
 
 - Official source code repo: https://github.com/ddhmed/pisnrs
 - Download releases: https://pypi.org/project/pisnrs/
-- web server : http://pisnrs.com/predict
+- web server : http://pisnrs.badd-cao.net/predict
 
 ## Source code
 
