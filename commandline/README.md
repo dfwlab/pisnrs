@@ -8,7 +8,7 @@ The commandline.py file could process a batch of compounds on the commandline.
 Currently, commandline.py requires the following dependencies:
 
 - Python (>= 3.6)
-- PisNRs (>= 2018.03.2.0)
+- PisNRs 
 
 After the installation of pisnrs, just download [commandline.py](https://raw.githubusercontent.com/ddhmed/pisnrs/master/commandline/commandline.py) and put it into a specific directory.
 
@@ -44,9 +44,9 @@ Other columns represents the positive possiblities to target at the correspondin
 
 ## Example 
 ~~~~~~~~~~~~~~~
-    python pipeline.py --mols-type smiles --mols-input molecule.txt --protein-input protein.txt --output-filename output.txt
+    python commandline.py --mols-type smiles --mols-input molecule.txt --protein-input protein.txt --output-filename output.txt
 ~~~~~~~~~~~~~~~
 
 ~~~~~~~~~~~~~~~
-    python pipeline.py --mols-type mol --mols-input ./molecule/ --protein-input protein.txt --output-filename output.txt
+    python commandline.py --mols-type mol --mols-input ./molecule/ --protein-input protein.txt --output-filename output.txt
 ~~~~~~~~~~~~~~~
